@@ -21,3 +21,9 @@ const menuArray = [
         id: 2
     }
 ]
+
+
+function startup() {
+    console.log("Server started")
+    
+}
