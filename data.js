@@ -22,8 +22,17 @@ const menuArray = [
     }
 ]
 
+const content = document.getElementById("content");
 
-function startup() {
-    console.log("Server started")
-    
-}
+content.innerHTML = `
+    <h1>Menu</h1>
+    <ul>
+        ${menuArray.map(item => `
+            <li>
+                <h2>${item.name} ${item.emoji}</h2>
+                <p>${item.ingredients.join(", ")}</p>
+                <p>Price: $${item.price}</p>
+            </li>
+        `).join("")}
+    </ul>
+`;
