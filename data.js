@@ -26,13 +26,13 @@ const content = document.getElementById("content");
 
 content.innerHTML = `
     <h1>Menu</h1>
-    <ul>
+    <section class="choice-container">
         ${menuArray.map(item => `
-            <li>
+            <div class="details-container">
                 <h2>${item.name} ${item.emoji}</h2>
                 <p>${item.ingredients.join(", ")}</p>
                 <p>Price: $${item.price}</p>
-            </li>
+            </div>
         `).join("")}
-    </ul>
+    </section>
 `;
