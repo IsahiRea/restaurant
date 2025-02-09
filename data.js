@@ -25,13 +25,15 @@ const menuArray = [
 const content = document.getElementById("content");
 
 content.innerHTML = `
-    <h1>Menu</h1>
     <section class="choice-container">
         ${menuArray.map(item => `
-            <div class="details-container">
-                <h2>${item.name} ${item.emoji}</h2>
-                <p>${item.ingredients.join(", ")}</p>
-                <p>Price: $${item.price}</p>
+            <div class="choice">
+                <p class="emoji">${item.emoji}</p>
+                <div class="details-container">
+                    <h2 class="product-name">${item.name}</h2>
+                    <p class="ingredients">${item.ingredients.join(", ")}</p>
+                    <p class="price">$${item.price}</p>
+                </div>
             </div>
         `).join("")}
     </section>
