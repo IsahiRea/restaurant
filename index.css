@@ -43,10 +43,15 @@ header {
 .choice {
     width: 50%;
     display: flex;
-    justify-content: start;
+    justify-content: space-around;
     border-bottom: 1px solid grey;
 
     padding: 20px 0px;
+}
+
+.product-container {
+    display: flex;
+    justify-content: start;
 }
 
 .emoji {
@@ -78,5 +83,16 @@ header {
 
 .price {
     font-size: 20px;
+}
+
+.button-container {
+    border: 1px solid black;
+}
+
+.add-btn {
+    font-weight: 300;
+    font-size: 2rem;
+    border: 1px solid black;
+    border-radius: 100px;
 }
 
