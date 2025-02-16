@@ -22,6 +22,7 @@ const menuArray = [
     }
 ]
 
+const addBtn = document.getElementById(".add-1");
 const content = document.getElementById("content");
 
 content.innerHTML = `
@@ -37,9 +38,13 @@ content.innerHTML = `
                     </div>
                 </div>
                 <div class="button-container">
-                    <p class="add-btn">+</p>
+                    <p class="add-btn" id="add">+</p>
                 </div>
             </div>
         `).join("")}
     </section>
 `;
+
+addBtn.addEventListener("click", function () {
+    console.log("clicked");
+})
