@@ -53,6 +53,7 @@ header {
 .product-container {
     display: flex;
     justify-content: start;
+    width: 50%;
 }
 
 .emoji {
