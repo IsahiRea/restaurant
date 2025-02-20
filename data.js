@@ -13,7 +13,7 @@ const menuArray = [
         emoji: "🍔",
         id: 1
     },
-        {
+    {
         name: "Beer",
         ingredients: ["grain, hops, yeast, water"],
         price: 12,
@@ -22,7 +22,6 @@ const menuArray = [
     }
 ]
 
-const addBtn = document.getElementById(".add-1");
 const content = document.getElementById("content");
 
 content.innerHTML = `
@@ -38,13 +37,17 @@ content.innerHTML = `
                     </div>
                 </div>
                 <div class="button-container">
-                    <p class="add-btn" id="add">+</p>
+                    <p class="add-btn" id="add-${item.id}">+</p>
                 </div>
             </div>
         `).join("")}
     </section>
 `;
 
-addBtn.addEventListener("click", function () {
-    console.log("clicked");
-})
+// Add button event listeners
+menuArray.forEach(item => {
+    const addBtn = document.getElementById(`add-${item.id}`);
+    addBtn.addEventListener("click", function () {
+        console.log(`clicked ${item.name}`);
+    });
+});
