@@ -38,7 +38,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid grey;
 }
 
 .choice {
@@ -103,3 +102,34 @@ header {
     cursor: pointer;
 }
 
+
+/* Order Styling */
+.order {
+    width: 600px;
+    margin: 0 auto;
+
+    border: 1px solid black;
+}
+
+.order-items-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    border-bottom: 1px solid #393333;
+}
+
+.item {
+    font-size: 28px;
+    margin: 5px 0px;
+}
+
+.order-btn {
+    background: #16DB99;
+    border: none;
+    width: 100%;
+    padding: 10px 0px;
+    font-size: 1rem;
+    color: #FFFFFF;
+    font-weight: 700;
+}
