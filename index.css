@@ -33,11 +33,14 @@ header {
     margin: 5px 0px 0px 0px;
 }
 
+/* Individual Items */
+/* TODO: Change this to content */
 .choice-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid tomato;
 }
 
 .choice {
