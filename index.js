@@ -9,6 +9,9 @@ function renderMenu(itemsArr) {
                 <div class="product-container">
                     <p class="emoji">${item.emoji}</p>
                 </div> 
+                <div class="button-container">
+                    <button class="add-btn"></button>
+                </div>
             </section>
         ` 
     }).join("")
