@@ -7,44 +7,57 @@
     </head>
     <body>
 
-        <header class="banner">
+        <!-- Hero Content -->
+        <header>
             <div class="banner-content">
                 <h1 class="hero-title">Jimmy's Diner</h1>
                 <p class="hero-motto">The best burgers and pizzas in town.</p>
             </div>
         </header>
 
+        <!-- Order List -->
         <main class="content" id="content"></main>
 
-        <!-- TODO: Order section -->
-        <section class="order">
-            <h2 class="order-header">Your order</h2>
-            <div class="order-items-container">
-                
-                <div class="order-items">
-                    <div class="items">
-                        <p class="item-name">Pizza <span class="remove-item">remove</span></p>
-                        <p class="price">$14</p>
-                    </div>
-
-                    <div class="items">
-                        <p class="item-name">Beer <span class="remove-item">remove</span></p>
-                        <p class="price">$12</p>
-                    </div>
-                </div>
-
-                <div class="total-order">
-                    <p class="total-price">Total price:</p>
-                    <p class="price">$26</p>
-                </div>
-
+        <!-- Transaction Modal -->
+        <section class="transaction-modal">
+            <div class="modal-content">
+                <form class="transaction-form">
+                    <h2>Enter card details</h2>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <input type="text" id="card" placeholder="Enter card number" required>
+                    <input type="text" id="cvv" placeholder="Enter CVV" required>
+                </form>
             </div>
-            <button class="order-btn">Complete order</button>
         </section>
-
+        
         <footer class="price-details"></footer>
-
+        
 	    <script src="index.js" type="module"></script>
     </body>
 </html>
+    
+    <!-- TODO: Order section -->
+    <!-- <section class="order">
+        <h2 class="order-header">Your order</h2>
+        <div class="order-items-container">
+            
+            <div class="order-items">
+                <div class="items">
+                    <p class="item-name">Pizza <span class="remove-item">remove</span></p>
+                    <p class="price">$14</p>
+                </div>
 
+                <div class="items">
+                    <p class="item-name">Beer <span class="remove-item">remove</span></p>
+                    <p class="price">$12</p>
+                </div>
+            </div>
+
+            <div class="total-order">
+                <p class="total-price">Total price:</p>
+                <p class="price">$26</p>
+            </div>
+
+        </div>
+        <button class="order-btn">Complete order</button>
+    </section> -->

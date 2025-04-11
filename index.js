@@ -10,7 +10,7 @@ function renderMenu(itemsArr) {
                     <p class="emoji">${item.emoji}</p>
                 </div> 
                 <div class="button-container">
-                    <button class="add-btn"></button>
+                    <button class="add-btn">+</button>
                 </div>
             </section>
         ` 

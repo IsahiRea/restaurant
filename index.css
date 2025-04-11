@@ -4,21 +4,12 @@ body {
     text-align: center;
 } 
 
+/* Hero Content */
 header {
-    display: flex;    
-    flex-direction: column;
-    align-items: start;
-
-    width: 600px;
-    margin: 0px auto;
-
+    display: flex;
+    justify-content: center;
     color: white;
-
-    background-image: url("images/Banner.jfif");
-    background-repeat: no-repeat;
-    background-position: center;
-
-    padding: 70px 0px;
+    width: 100%;
 }
 
 .banner-content {
@@ -26,7 +17,14 @@ header {
     flex-direction: column;
     align-items: center;
     
-    width: 300px;
+    width: 100%;
+    height: 167px;
+    
+    background-image: url("images/Banner.jfif");
+    background-repeat: no-repeat;
+    background-position: 50% 70%;
+
+    border: 1px solid tomato;
 }
 
 .hero-title, .hero-motto {
@@ -34,13 +32,13 @@ header {
 }
 
 /* Individual Items */
-/* TODO: Change this to content */
-.choice-container {
+.content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid tomato;
+
+    /* border: 1px solid tomato; */
 }
 
 .choice {
@@ -190,4 +188,38 @@ header {
 .order-btn:hover {
     cursor: pointer;
     background: #13B17B;
+}
+
+/* Transaction Modal */
+.transaction-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    height: 400px;
+    width: 400px;
+
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px #000000;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.transaction-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
 }
