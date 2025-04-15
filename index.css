@@ -106,6 +106,7 @@ header {
 
 /* Order Styling */
 .order {
+    display: none;
     width: 600px;
     margin: 30px auto;
 }

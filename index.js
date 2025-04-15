@@ -1,24 +1,58 @@
 import { menuArray } from "./data.js";
 
+const order = []
 
 document.addEventListener('click', function (e) {
     
+    
     if (e.target.dataset.add) {
-        const itemId = e.target.dataset.id;
-        addToCart(itemId);
+        order.push(e.target.dataset.add)
+
+        const itemId = e.target.dataset.add
+        addToCart(itemId)
     }
 
     //TODO: add remove from cart functionality
     if (e.target.dataset.remove) {
-        const itemId = e.target.dataset.id;
-        removeFromCart(itemId);
+        order.splice(order.indexOf(e.target.dataset.id), 1)
+
+        const itemId = e.target.dataset.id
+        removeFromCart(itemId)
+    }
+
+    if(order.length === 0){
+        document.getElementById("order").style.display = "none"
     }
 })
 
 
 function addToCart(itemId) {
-    const item = menuArray.find(item => item.id == itemId);
-    console.log(`clicked ${item.name}`);
+
+    if(order.length > 0){
+        document.getElementById("order-container").style.display = "block"
+    }
+
+    const orderEl = document.getElementById("order-items")
+    const totalPriceEl = document.getElementById("totals")
+
+    console.log(orderEl)
+
+    const item = menuArray.find(item => {
+        return Number(itemId) === item.id
+    })
+
+    const orderItemHtml = `
+        <div class="items">
+            <p class="item-name">${item.name}<span class="remove-item">remove</span></p>
+            <p class="price">${item.price}</p>
+        </div>`
+
+    orderEl.innerHTML += orderItemHtml    
+    totalPriceEl.textContent = `Total: $${order.reduce((acc, itemId) => {
+        const item = menuArray.find(item => item.id == itemId)
+        return acc + item.price
+    }
+    , 0)}`
 }
 
 function renderMenu(itemsArr) {
@@ -44,31 +78,3 @@ function renderMenu(itemsArr) {
 }
 
 renderMenu(menuArray)
-// <!-- TODO: Order section -->
-//     <!-- <section class="order">
-//         <h2 class="order-header">Your order</h2>
-//         <div class="order-items-container">
-            
-//             <div class="order-items">
-//                 <div class="items">
-//                     <p class="item-name">Pizza <span class="remove-item">remove</span></p>
-//                     <p class="price">$14</p>
-//                 </div>
-
-//                 <div class="items">
-//                     <p class="item-name">Beer <span class="remove-item">remove</span></p>
-//                     <p class="price">$12</p>
-//                 </div>
-//             </div>
-
-//             <div class="total-order">
-//                 <p class="total-price">Total price:</p>
-//                 <p class="price">$26</p>
-//             </div>
-
-//         </div>
-//         <button class="order-btn">Complete order</button>
-//     </section> -->
-
-
-
