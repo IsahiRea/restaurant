@@ -1,7 +1,8 @@
 body {
-    margin: 0;
+    margin: 0 auto;
     font-family: "Smythe", sans-serif;
     text-align: center;
+    width: 640px;
 } 
 
 /* Hero Content */
@@ -37,16 +38,15 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    /* border: 1px solid tomato; */
+    width: 100%;
 }
 
 .choice {
-    width: 30%;
+    width: 90%;
     display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid grey;
-
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #D2D2D2;
     padding: 20px 0px;
 }
 
@@ -95,6 +95,7 @@ header {
     border: 1px solid #DEDEDE;
     border-radius: 50px;
     padding: 10px 20px;
+    background-color: #FFFFFF;
 }
 
 .add-btn:hover, .add-btn:focus {
@@ -167,6 +168,8 @@ header {
     display: flex;
     justify-content: space-between;
     margin: 20px 0px;
+    border-top: 2px solid #393333;
+    padding-top: 1em;
 }
 
 .total-price {

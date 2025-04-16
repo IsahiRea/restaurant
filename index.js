@@ -1,32 +1,29 @@
 import { menuArray } from "./data.js";
 
 const order = []
+renderMenu(menuArray)
 
 document.addEventListener('click', function (e) {
     
     
     if (e.target.dataset.add) {
         order.push(e.target.dataset.add)
-
-        const itemId = e.target.dataset.add
-        addToCart(itemId)
+        renderCart()
     }
 
     //TODO: add remove from cart functionality
     if (e.target.dataset.remove) {
         order.splice(order.indexOf(e.target.dataset.id), 1)
-
-        const itemId = e.target.dataset.id
-        removeFromCart(itemId)
+        renderCart()
     }
 
     if(order.length === 0){
-        document.getElementById("order").style.display = "none"
+        document.getElementById("order-container").style.display = "none"
     }
 })
 
 
-function addToCart(itemId) {
+function renderCart() {
 
     if(order.length > 0){
         document.getElementById("order-container").style.display = "block"
@@ -37,17 +34,20 @@ function addToCart(itemId) {
 
     console.log(orderEl)
 
-    const item = menuArray.find(item => {
-        return Number(itemId) === item.id
-    })
+    const orderHtml = order.map(itemId => {
+        const item = menuArray.find(item => {
+            return Number(itemId) === item.id
+        })
 
-    const orderItemHtml = `
-        <div class="items">
-            <p class="item-name">${item.name}<span class="remove-item">remove</span></p>
-            <p class="price">${item.price}</p>
-        </div>`
+        return `
+            <div class="items">
+                <p class="item-name">${item.name}<span class="remove-item" data-remove="${item.id}">remove</span></p>
+                <p class="price">$${item.price}</p>
+            </div>`
+    }).join("")
 
-    orderEl.innerHTML += orderItemHtml    
+    orderEl.innerHTML = orderHtml
+
     totalPriceEl.textContent = `Total: $${order.reduce((acc, itemId) => {
         const item = menuArray.find(item => item.id == itemId)
         return acc + item.price
@@ -76,5 +76,3 @@ function renderMenu(itemsArr) {
 
     document.getElementById("content").innerHTML = menuItemsHtml
 }
-
-renderMenu(menuArray)
