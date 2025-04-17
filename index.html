@@ -27,22 +27,24 @@
                 <p class="total-price" id="totals">Total price:</p>
                 <p class="price"></p>
             </div>
-            <button class="order-btn">Complete order</button>
+            <button class="order-btn" id="complete">Complete order</button>
         </section>
 
         <!-- Transaction Modal -->
-        <section class="transaction-modal">
+        <section class="transaction-modal" id="modal">
             <div class="modal-content">
-                <form class="transaction-form">
-                    <h2>Enter card details</h2>
-                    <input type="text" id="name" placeholder="Enter your name" required>
-                    <input type="text" id="card" placeholder="Enter card number" required>
-                    <input type="text" id="cvv" placeholder="Enter CVV" required>
+                <h2>Enter card details</h2>
+                <form class="transaction-form" id="customer-form">
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    <input type="text" id="card" name="card" placeholder="Enter card number" required>
+                    <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+                    <button type="submit" id="submit" class="submit-btn">Pay</button>
                 </form>
             </div>
         </section>
-        
-        <footer class="price-details"></footer>
+
+        <!-- Confirmation message -->
+        <section id="confirmation"><p>test</p></section>
         
 	    <script src="index.js" type="module"></script>
     </body>
