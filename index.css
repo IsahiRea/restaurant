@@ -50,7 +50,7 @@ header {
 }
 
 .choice {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,7 +61,6 @@ header {
 .product-container {
     display: flex;
     justify-content: start;
-    width: 50%;
 }
 
 .emoji {
@@ -74,7 +73,6 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     padding: 0px 5px;
 }
 
@@ -95,14 +93,18 @@ header {
     font-size: 20px;
 }
 
+.button-container {
+    padding: 1em;
+}
 
 .add-btn {
     font-family: 'Inter';
     font-weight: 200;
     font-size: 2rem;
     border: 1px solid #DEDEDE;
-    border-radius: 50px;
-    padding: 10px 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     background-color: #FFFFFF;
 }
 
